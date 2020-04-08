@@ -1,37 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delivery food - доставка еды на дом</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Delivery food - доставка еды на дом</title>
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<header class="header">
-	<div class="container">
-		<div class="header-inner">
-			<div class="logo header__logo">
-				<img src="img/logo.svg" alt="Logo">
-			</div>
-			<input class="input header-inner__input" type="text" placeholder="Адрес доставки">
-			</input>
-			<div class="header-inner__buttons">
-				<button class="btn header-inner__button-primary" type="button">
-					<img class="header__button-img" src="img/icons/user.svg" alt="User">
-					<span>Войти</span>
-				</button>
-				<button class="btn header-inner__button" type="button">
-					<img class="header__button-img" src="img/icons/cart.svg" alt="Cart">
-					<span>Корзина</span>
-				</button>
-			</div>
-		</div>
-	</div>
-</header>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-inner">
+          <div class="logo header__logo">
+            <a href="index.html"><img src="img/logo.svg" alt="Logo" /></a>
+          </div>
+          <input
+            class="input header-inner__input"
+            type="text"
+            placeholder="Адрес доставки"
+          />
+          <div class="header-inner__buttons">
+            <button class="btn header-inner__button-primary" type="button">
+              <img
+                class="header__button-img"
+                src="img/icons/user.svg"
+                alt="User"
+              />
+              <span>Войти</span>
+            </button>
+            <button class="btn header-inner__button" type="button">
+              <img
+                class="header__button-img"
+                src="img/icons/cart.svg"
+                alt="Cart"
+              />
+              <span>Корзина</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
 
-<body>
+    <section class="promo">
+      <div class="container">
+        <div class="promo-inner">
+          <h1 class="promo-inner__title title">
+            Онлайн-сервис доставки еды на дом
+          </h1>
+          <p class="promo-inner__text">
+            Блюда из любимого ресторана привезет <br />
+            курьер в перчатках, маске и с антисептиком
+          </p>
+        </div>
+      </div>
+    </section>
 
-</body>
-
+    <section class="restaurants">
+      <div class="container">
+        <div class="restaurants-inner">
+          <div class="restaurants-inner__heading">Рестораны</div>
+          <input
+            class="input restaurants-inner__input"
+            type="text"
+            placeholder="Поиск блюд и ресторанов"
+          />
+        </div>
+        <div class="restaurants-inner__items">
+          <div class="restaurants-inner__item">
+            <img
+              class="restaurants-inner__item-img"
+              src="img/restaurants-food/pizza-plus.jpg"
+              alt="Pizza plus"
+            />
+            <div class="restaurants-inner__item-descr">
+              <div class="restaurants-inner__item-descr-title">Пицца плюс</div>
+              <div class="restaurants-inner__item-descr-label">50 мин</div>
+              <div class="restaurants-inner__item-descr-rating">4.5</div>
+              <div class="restaurants-inner__item-descr-txt">
+                От 900 ₽
+                <div class="restaurants-inner__item-descr-txt-devider"></div>
+                Пицца
+              </div>
+            </div>
+          </div>
+          <div class="restaurants-inner__item">
+            <img
+              class="restaurants-inner__item-img"
+              src="img/restaurants-food/tanuki.jpg"
+              alt="Pizza plus"
+            />
+            <div class="restaurants-inner__item-descr">
+              <div class="restaurants-inner__item-descr-title">Тануки</div>
+              <div class="restaurants-inner__item-descr-label">50 мин</div>
+              <div class="restaurants-inner__item-descr-rating">4.5</div>
+              <div class="restaurants-inner__item-descr-txt">
+                От 900 ₽
+                <div class="restaurants-inner__item-descr-txt-devider"></div>
+                Пицца
+              </div>
+            </div>
+          </div>
+          <div class="restaurants-inner__item">
+            <img
+              class="restaurants-inner__item-img"
+              src="img/restaurants-food/FoodBand.jpg"
+              alt="Pizza plus"
+            />
+            <div class="restaurants-inner__item-descr">
+              <div class="restaurants-inner__item-descr-title">FoodBand</div>
+              <div class="restaurants-inner__item-descr-label">50 мин</div>
+              <div class="restaurants-inner__item-descr-rating">4.5</div>
+              <div class="restaurants-inner__item-descr-txt">
+                От 900 ₽
+                <div class="restaurants-inner__item-descr-txt-devider"></div>
+                Пицца
+              </div>
+            </div>
+          </div>
+          <div class="restaurants-inner__item">
+            <img
+              class="restaurants-inner__item-img"
+              src="img/restaurants-food/grow-pizza.jpg"
+              alt="Pizza plus"
+            />
+            <div class="restaurants-inner__item-descr">
+              <div class="restaurants-inner__item-descr-title">Жадина-пицца</div>
+              <div class="restaurants-inner__item-descr-label">50 мин</div>
+              <div class="restaurants-inner__item-descr-rating">4.5</div>
+              <div class="restaurants-inner__item-descr-txt">
+                От 900 ₽
+                <div class="restaurants-inner__item-descr-txt-devider"></div>
+                Пицца
+              </div>
+            </div>
+          </div>
+          <div class="restaurants-inner__item">
+            <img
+              class="restaurants-inner__item-img"
+              src="img/restaurants-food/eat-point.jpg"
+              alt="Pizza plus"
+            />
+            <div class="restaurants-inner__item-descr">
+              <div class="restaurants-inner__item-descr-title">Точка еды</div>
+              <div class="restaurants-inner__item-descr-label">50 мин</div>
+              <div class="restaurants-inner__item-descr-rating">4.5</div>
+              <div class="restaurants-inner__item-descr-txt">
+                От 900 ₽
+                <div class="restaurants-inner__item-descr-txt-devider"></div>
+                Пицца
+              </div>
+            </div>
+          </div>
+          <div class="restaurants-inner__item">
+            <img
+              class="restaurants-inner__item-img"
+              src="img/restaurants-food/PizzaBurger.png"
+              alt="Pizza plus"
+            />
+            <div class="restaurants-inner__item-descr">
+              <div class="restaurants-inner__item-descr-title">PizzaBurger</div>
+              <div class="restaurants-inner__item-descr-label">50 мин</div>
+              <div class="restaurants-inner__item-descr-rating">4.5</div>
+              <div class="restaurants-inner__item-descr-txt">
+                От 900 ₽
+                <div class="restaurants-inner__item-descr-txt-devider"></div>
+                Пицца
+              </div>
+            </div>
+          </div>
+ 
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

@@ -27,18 +27,14 @@ $md4: 479.98px;
 *,
 ::before,
 ::after {
-	margin: 0;
-	padding: 0;
 	box-sizing: border-box;
 }
 html {
-	overflow: hidden;
+	overflow-x: hidden;
 }
 body {
-	background: #e8e8e8;
-}
-.header {
-	padding-top: 45px;
+	font-family: "Roboto", sans-serif;
+	background: #ffffff;
 }
 .btn {
 	display: inline-block;
@@ -55,13 +51,25 @@ body {
 	border-radius: 3px;
 	font-size: 16px;
 	line-height: 24px;
-	font-family: "Playfair Display", serif;
+	font-family: "Playfair Display", sans-serif;
 	max-height: 40px;
-}
-.input {
-	font-family: "Playfair Display", serif;
 	outline: none;
 }
+.input {
+	font-family: "Playfair Display", sans-serif;
+	outline: none;
+	padding: 0.5em 1em;
+	border: 1px solid #bfbfbf;
+	border-radius: 3px;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+// Шапка
+.header {
+	padding: 45px 10px 20px;
+}
+
 .header-inner {
 	height: 40px;
 	display: flex;
@@ -69,14 +77,10 @@ body {
 	justify-content: space-between;
 
 	&__input {
-		padding: 8px 12px 8px 32px;
+		padding-left: 32px;
 		width: 690px;
 		height: 40px;
-		background-image: url(../img/icons/home.svg);
-		background-repeat: no-repeat;
-		background-position: left 10px center;
-		border: 1px solid #bfbfbf;
-		border-radius: 3px;
+		background: url(../img/icons/home.svg) no-repeat left 10px center;
 		margin: 0 30px;
 	}
 	&__buttons {
@@ -102,4 +106,115 @@ body {
 		}
 	}
 }
-//<ОСНОВНОЙ БЛОК>====================================================================================================
+//Шапка
+
+//Promo
+.promo {
+	padding: 20px 10px;
+	&-inner {
+		padding: 68px 70px;
+		box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
+		background: #fff1b8 url(../img/promo-image.png) no-repeat top right -400px / cover;
+		border-radius: 10px;
+		&__title {
+			max-width: 410px;
+			font-weight: 700;
+			font-size: 39px;
+			line-height: 46px;
+			color: #302c34;
+		}
+		&__text {
+			max-width: 510px;
+			font-size: 24px;
+			line-height: 28px;
+			color: #302c34;
+		}
+	}
+}
+//Restaurants
+.restaurants {
+	padding: 35px 0 90px;
+	&-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0px 0px 45px 0px;
+		&__heading {
+			font-weight: 700;
+			font-size: 36px;
+			line-height: 42px;
+			color: #000000;
+		}
+		&__input {
+			background: url(../img/icons/search.svg) no-repeat left 10px center;
+			padding-left: 32px;
+			min-width: 306px;
+		}
+		&__items {
+			display: flex;
+			flex-flow: row wrap;
+			align-items: center;
+			justify-content: space-between;
+		}
+		&__item {
+			margin: 0px 0px 30px 0px;
+			&-descr {
+				position: relative;
+				padding: 20px 24px 34px;
+				&-img {
+					transform: translateY(4px);
+				}
+				&-title {
+					margin-bottom: 10px;
+					font-weight: 700;
+					font-size: 24px;
+					line-height: 32px;
+					color: #000000;
+				}
+				&-label {
+					position: absolute;
+					top: 24px;
+					right: 24px;
+					// font-family: "Playfair Display", sans-serif;
+					display: inline-flex;
+					padding: 1px 8px;
+					background: #262626;
+					border-radius: 2px;
+					color: #fff;
+					font-size: 12px;
+					line-height: 20px;
+				}
+				&-rating {
+					position: relative;
+					padding-left: 22px;
+					display: inline-block;
+					font-weight: 700;
+					font-size: 18px;
+					line-height: 32px;
+					color: #ffc107;
+					margin: 0px 26px 0px 0px;
+					&::before {
+						content: url(../img/icons/star.svg);
+						position: absolute;
+						left: 0;
+					}
+				}
+				&-txt {
+					display: inline-flex;
+					align-items: center;
+					font-size: 18px;
+					line-height: 32px;
+					color: #8c8c8c;
+					&-devider {
+						display: inline-flex;
+						width: 5px;
+						height: 5px;
+						margin: 5px 10px;
+						background: #8c8c8c;
+						border-radius: 50%;
+					}
+				}
+			}
+		}
+	}
+}
