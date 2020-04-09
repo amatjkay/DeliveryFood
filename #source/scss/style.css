@@ -207,7 +207,12 @@ body {
 }
 
 .restaurants-inner__item {
+  background: #fff;
   margin: 0px 0px 30px 0px;
+  -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 7px 7px 0px 0px;
+  overflow: hidden;
 }
 
 .restaurants-inner__item-descr {
