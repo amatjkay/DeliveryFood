@@ -1,0 +1,140 @@
+@media (max-width: $md2) {
+	.promo {
+		&-inner__text {
+			font-size: 20px;
+			line-height: 1.5em;
+		}
+		&-inner__title {
+			font-size: 35px;
+			line-height: 1.2;
+		}
+	}
+}
+@media (max-width: $md3) {
+	.header-inner {
+		flex-wrap: wrap;
+		// &__buttons {
+		// 	// order: 1;
+		// }
+		&__input {
+			flex: 1;
+			// order: 2;
+		}
+	}
+	.footer-inner {
+		display: flex;
+		align-items: flex-end;
+		&__nav-link:not(:last-child) {
+			margin-right: 15px;
+		}
+		&__nav-link {
+			font-size: 16px;
+			text-decoration: none;
+		}
+	}
+}
+@media (max-width: 720px) {
+	.header-inner__buttons {
+		display: inline-block;
+		margin: 10px;
+		min-width: 0;
+	}
+	.header-inner__buttons span {
+		display: none;
+	}
+	.restaurants {
+		padding: 25px 0 0px;
+	}
+	.footer {
+		&-inner {
+			display: block;
+			& .logo img {
+				display: block;
+				margin: 0 auto;
+			}
+			&__nav {
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+				margin: 20px 0;
+			}
+			&-social {
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+}
+
+@media (max-width: 562px) {
+	.header {
+		padding: 20px 10px 0px;
+		&-inner {
+			height: auto;
+			flex-wrap: wrap;
+			&__buttons {
+				order: 1;
+			}
+			&__input {
+				margin: 10px 0;
+				flex: 1;
+				order: 2;
+			}
+		}
+	}
+	.container {
+		.promo-inner {
+			padding: 30px 0;
+			background: #fff1b8;
+			&__title {
+				font-size: 30px;
+			}
+		}
+	}
+}
+@media (max-width: 408px) {
+	.container {
+		.promo-inner {
+			padding: 30px 0;
+			box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
+			background: #fff1b8;
+			border-radius: 10px;
+			&__title {
+				font-size: 30px;
+			}
+		}
+		.footer {
+			&-inner__nav {
+				flex-direction: column;
+				display: flex;
+				align-items: center;
+				&-link {
+					margin-right: 0;
+					line-height: 30px;
+					font-size: 20px;
+					&:nth-child(even) {
+						margin-left: -25px;
+					}
+					&:nth-child(1) {
+						margin-left: -4px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 320px) {
+	.container {
+		.promo-inner {
+			padding: 30px 0;
+			box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
+			background: #fff1b8;
+			border-radius: 10px;
+			&__title {
+				font-size: 29px;
+			}
+		}
+	}
+}
