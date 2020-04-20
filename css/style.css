@@ -98,7 +98,7 @@ li {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 5px;
 }
 
@@ -137,6 +137,16 @@ li {
   background: #000;
   transform: rotate(-45deg);
   left: 0;
+}
+
+.modal-dialog__close-btn:hover::after {
+  content: "";
+  background: #40a9ff;
+}
+
+.modal-dialog__close-btn:hover::before {
+  content: "";
+  background: #40a9ff;
 }
 
 .modal-dialog__list {
