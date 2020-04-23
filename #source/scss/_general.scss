@@ -37,7 +37,7 @@ button {
   font-family: "Playfair Display", sans-serif;
   height: 40px;
   outline: none;
-  transition: all 0.8s;
+  transition: all 0.5s;
   &:hover {
     background: transparent;
     color: #6b6969;
@@ -59,17 +59,50 @@ li {
 
   &-dialog {
     padding: 40px 45px;
-    position: absolute;
     width: 780px;
     height: 550px;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     background: #ffffff;
     border-radius: 5px;
 
+    @media (max-width:1200px) {
+      padding: 30px 35px;
+      width: 680px;
+      height: 450px;
+    }
+    @media (max-width:720px) {
+        padding: 20px;
+        width: 90%;
+    }
+    @media (max-width:480px) {
+        height: auto;
+    }
+
+
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 275px;
+      padding: 45px 0 60px;
+
+      @media (max-width:1200px) {
+        padding: 10px 0 25px;
+      }
+    }
+
     &__heading {
       display: inline-block;
+
+      @media (max-width:1200px) {
+        font-size: 30px !important;
+      }
+      @media (max-width:767) {
+        font-size: 20px;
+      }
     }
 
     &__close-btn {
@@ -81,6 +114,12 @@ li {
       right: 46px;
       background: transparent;
       border: none;
+
+      @media (max-width:1200px) {
+        top: 35px;
+        right: 35px;
+      }
+      
 
       &::before {
         content: "";
@@ -106,7 +145,6 @@ li {
         &::after {
           content: "";
           background: #40a9ff;
-
         }
         &::before {
           content: "";
@@ -126,6 +164,10 @@ li {
         align-items: center;
         justify-content: space-between;
         position: relative;
+
+        @media (max-width:720px) {
+          flex-wrap: wrap;
+        }
 
         &::after {
           content: "";
@@ -150,8 +192,9 @@ li {
       font-weight: 400;
     }
     &__remove-btn {
-      width: 40px;
-      height: 33px;
+      padding: 5px !important;
+      width: 40px !important;
+      height: 33px !important;
       border-radius: 2px;
       border: 1px solid #40a9ff;
       background-color: #ffffff;
@@ -161,8 +204,9 @@ li {
       font-weight: 400;
     }
     &__append-btn {
-      width: 40px;
-      height: 33px;
+      padding: 5px !important;
+      width: 40px !important;
+      height: 33px !important;
       border-radius: 2px;
       border: 1px solid #40a9ff;
       background-color: #ffffff;
@@ -178,20 +222,80 @@ li {
       display: inline-block;
       margin-left: auto;
       margin-right: 47px;
+
+      @media (max-width:720px) {
+        margin-right: 25px;
+      }
+      @media (max-width:480px) {
+        margin-left: 0px;
+      }
     }
 
     &__food-name {
+      margin-right: 20px;
       font-size: 18px;
       line-height: 32px;
       color: #000000;
     }
-    &__inner {
+    
+
+    &__footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      min-height: 275px;
-      padding: 45px 0 60px;
+
+      @media (max-width:1200px) {
+        max-height: 40px;
+      }
+
     }
+
+    &__total-counter {
+      display: inline-flex;
+      background: #262626;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 23px;
+      color: #FAFAFA;
+      padding: 15px 20px;
+      cursor: default;
+
+      @media (max-width:1200px) {
+        max-height: 40px;
+        font-size: 18px;
+        padding: 0.5em 1em;
+      }
+      @media (max-width:480px) {
+        position: absolute;
+        top: 20px;
+        left: 190px;
+      }
+      @media (max-width:400px) {
+        left: 150px;
+      }
+      @media (max-width:350px) {
+        top: 63px;
+        left: 20px;
+      }
+
+     
+    }
+    &__order-btn {
+      display: inline-block;
+      margin-left: auto;
+      background: #1890FF;
+      background-image: none !important;
+      padding: 8px 16px !important;
+      margin-right: 30px !important;
+
+      @media (max-width:480px) {
+        margin-left: 0px;
+      }
+    }
+    // &__cancel-btn {
+
+    // }
   }
 }
 

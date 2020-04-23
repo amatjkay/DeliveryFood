@@ -17,7 +17,7 @@ html {
    ========================================================================== */
 
 /**
- * modal-dialog__remove-btn the margin in all browsers.
+ * btn modal-dialog__remove-btn the margin in all browsers.
  */
 
 body {
@@ -70,7 +70,7 @@ pre {
    ========================================================================== */
 
 /**
- * modal-dialog__remove-btn the gray background on active links in IE 10.
+ * btn modal-dialog__remove-btn the gray background on active links in IE 10.
  */
 
 a {
@@ -78,7 +78,7 @@ a {
 }
 
 /**
- * 1. modal-dialog__remove-btn the bottom border in Chrome 57-
+ * 1. btn modal-dialog__remove-btn the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 
@@ -142,7 +142,7 @@ sup {
    ========================================================================== */
 
 /**
- * modal-dialog__remove-btn the border on images inside links in IE 10.
+ * btn modal-dialog__remove-btn the border on images inside links in IE 10.
  */
 
 img {
@@ -154,7 +154,7 @@ img {
 
 /**
  * 1. Change the font styles in all browsers.
- * 2. modal-dialog__remove-btn the margin in Firefox and Safari.
+ * 2. btn modal-dialog__remove-btn the margin in Firefox and Safari.
  */
 
 button,
@@ -179,8 +179,8 @@ input { /* 1 */
 }
 
 /**
- * modal-dialog__remove-btn the inheritance of text transform in Edge, Firefox, and IE.
- * 1. modal-dialog__remove-btn the inheritance of text transform in Firefox.
+ * btn modal-dialog__remove-btn the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. btn modal-dialog__remove-btn the inheritance of text transform in Firefox.
  */
 
 button,
@@ -200,7 +200,7 @@ button,
 }
 
 /**
- * modal-dialog__remove-btn the inner border and padding in Firefox.
+ * btn modal-dialog__remove-btn the inner border and padding in Firefox.
  */
 
 button::-moz-focus-inner,
@@ -233,7 +233,7 @@ fieldset {
 /**
  * 1. Correct the text wrapping in Edge and IE.
  * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. modal-dialog__remove-btn the padding so developers are not caught out when they zero out
+ * 3. btn modal-dialog__remove-btn the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
  */
 
@@ -255,7 +255,7 @@ progress {
 }
 
 /**
- * modal-dialog__remove-btn the default vertical scrollbar in IE 10+.
+ * btn modal-dialog__remove-btn the default vertical scrollbar in IE 10+.
  */
 
 textarea {
@@ -264,7 +264,7 @@ textarea {
 
 /**
  * 1. Add the correct box sizing in IE 10.
- * 2. modal-dialog__remove-btn the padding in IE 10.
+ * 2. btn modal-dialog__remove-btn the padding in IE 10.
  */
 
 [type="checkbox"],
@@ -293,7 +293,7 @@ textarea {
 }
 
 /**
- * modal-dialog__remove-btn the inner padding in Chrome and Safari on macOS.
+ * btn modal-dialog__remove-btn the inner padding in Chrome and Safari on macOS.
  */
 
 [type="search"]::-webkit-search-decoration {

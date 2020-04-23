@@ -68,7 +68,7 @@ button {
   font-family: "Playfair Display", sans-serif;
   height: 40px;
   outline: none;
-  transition: all 0.8s;
+  transition: all 0.5s;
 }
 
 .btn:hover {
@@ -92,9 +92,9 @@ li {
 
 .modal-dialog {
   padding: 40px 45px;
-  position: absolute;
   width: 780px;
   height: 550px;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -102,8 +102,55 @@ li {
   border-radius: 5px;
 }
 
+@media (max-width: 1200px) {
+  .modal-dialog {
+    padding: 30px 35px;
+    width: 680px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 720px) {
+  .modal-dialog {
+    padding: 20px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-dialog {
+    height: auto;
+  }
+}
+
+.modal-dialog__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 275px;
+  padding: 45px 0 60px;
+}
+
+@media (max-width: 1200px) {
+  .modal-dialog__inner {
+    padding: 10px 0 25px;
+  }
+}
+
 .modal-dialog__heading {
   display: inline-block;
+}
+
+@media (max-width: 1200px) {
+  .modal-dialog__heading {
+    font-size: 30px !important;
+  }
+}
+
+@media (max-width: 767) {
+  .modal-dialog__heading {
+    font-size: 20px;
+  }
 }
 
 .modal-dialog__close-btn {
@@ -115,6 +162,13 @@ li {
   right: 46px;
   background: transparent;
   border: none;
+}
+
+@media (max-width: 1200px) {
+  .modal-dialog__close-btn {
+    top: 35px;
+    right: 35px;
+  }
 }
 
 .modal-dialog__close-btn::before {
@@ -163,6 +217,12 @@ li {
   position: relative;
 }
 
+@media (max-width: 720px) {
+  .modal-dialog__list-item {
+    flex-wrap: wrap;
+  }
+}
+
 .modal-dialog__list-item::after {
   content: "";
   position: absolute;
@@ -187,8 +247,9 @@ li {
 }
 
 .modal-dialog__remove-btn {
-  width: 40px;
-  height: 33px;
+  padding: 5px !important;
+  width: 40px !important;
+  height: 33px !important;
   border-radius: 2px;
   border: 1px solid #40a9ff;
   background-color: #ffffff;
@@ -198,8 +259,9 @@ li {
 }
 
 .modal-dialog__append-btn {
-  width: 40px;
-  height: 33px;
+  padding: 5px !important;
+  width: 40px !important;
+  height: 33px !important;
   border-radius: 2px;
   border: 1px solid #40a9ff;
   background-color: #ffffff;
@@ -217,18 +279,91 @@ li {
   margin-right: 47px;
 }
 
+@media (max-width: 720px) {
+  .modal-dialog__price {
+    margin-right: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-dialog__price {
+    margin-left: 0px;
+  }
+}
+
 .modal-dialog__food-name {
+  margin-right: 20px;
   font-size: 18px;
   line-height: 32px;
   color: #000000;
 }
 
-.modal-dialog__inner {
+.modal-dialog__footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 275px;
-  padding: 45px 0 60px;
+}
+
+@media (max-width: 1200px) {
+  .modal-dialog__footer {
+    max-height: 40px;
+  }
+}
+
+.modal-dialog__total-counter {
+  display: inline-flex;
+  background: #262626;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #FAFAFA;
+  padding: 15px 20px;
+  cursor: default;
+}
+
+@media (max-width: 1200px) {
+  .modal-dialog__total-counter {
+    max-height: 40px;
+    font-size: 18px;
+    padding: 0.5em 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-dialog__total-counter {
+    position: absolute;
+    top: 20px;
+    left: 190px;
+  }
+}
+
+@media (max-width: 400px) {
+  .modal-dialog__total-counter {
+    left: 150px;
+  }
+}
+
+@media (max-width: 350px) {
+  .modal-dialog__total-counter {
+    top: 63px;
+    left: 20px;
+  }
+}
+
+.modal-dialog__order-btn {
+  display: inline-block;
+  margin-left: auto;
+  background: #1890FF;
+  background-image: none !important;
+  padding: 8px 16px !important;
+  margin-right: 30px !important;
+}
+
+@media (max-width: 480px) {
+  .modal-dialog__order-btn {
+    margin-left: 0px;
+  }
 }
 
 .input {
