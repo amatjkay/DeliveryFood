@@ -50,6 +50,7 @@ li {
 }
 
 .modal {
+  display: none;
   position: fixed;
   left: 0;
   top: 0;
@@ -57,10 +58,15 @@ li {
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
 
+  &--active {
+    display: flex;
+  }
+
   &-dialog {
     padding: 40px 45px;
-    width: 780px;
-    height: 550px;
+    max-width: 780px;
+    // min-height: 550px;
+    width: 98%;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -68,19 +74,18 @@ li {
     background: #ffffff;
     border-radius: 5px;
 
-    @media (max-width:1200px) {
+    @media (max-width: 1200px) {
       padding: 30px 35px;
       width: 680px;
       height: 450px;
     }
-    @media (max-width:720px) {
-        padding: 20px;
-        width: 90%;
+    @media (max-width: 720px) {
+      padding: 20px;
+      width: 90%;
     }
-    @media (max-width:480px) {
-        height: auto;
+    @media (max-width: 480px) {
+      height: auto;
     }
-
 
     &__inner {
       display: flex;
@@ -89,7 +94,7 @@ li {
       min-height: 275px;
       padding: 45px 0 60px;
 
-      @media (max-width:1200px) {
+      @media (max-width: 1200px) {
         padding: 10px 0 25px;
       }
     }
@@ -97,10 +102,10 @@ li {
     &__heading {
       display: inline-block;
 
-      @media (max-width:1200px) {
+      @media (max-width: 1200px) {
         font-size: 30px !important;
       }
-      @media (max-width:767) {
+      @media (max-width: 767) {
         font-size: 20px;
       }
     }
@@ -115,11 +120,10 @@ li {
       background: transparent;
       border: none;
 
-      @media (max-width:1200px) {
+      @media (max-width: 1200px) {
         top: 35px;
         right: 35px;
       }
-      
 
       &::before {
         content: "";
@@ -165,7 +169,7 @@ li {
         justify-content: space-between;
         position: relative;
 
-        @media (max-width:720px) {
+        @media (max-width: 720px) {
           flex-wrap: wrap;
         }
 
@@ -223,10 +227,10 @@ li {
       margin-left: auto;
       margin-right: 47px;
 
-      @media (max-width:720px) {
+      @media (max-width: 720px) {
         margin-right: 25px;
       }
-      @media (max-width:480px) {
+      @media (max-width: 480px) {
         margin-left: 0px;
       }
     }
@@ -237,17 +241,15 @@ li {
       line-height: 32px;
       color: #000000;
     }
-    
 
     &__footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      @media (max-width:1200px) {
+      @media (max-width: 1200px) {
         max-height: 40px;
       }
-
     }
 
     &__total-counter {
@@ -257,39 +259,37 @@ li {
       font-weight: 700;
       font-size: 20px;
       line-height: 23px;
-      color: #FAFAFA;
+      color: #fafafa;
       padding: 15px 20px;
       cursor: default;
 
-      @media (max-width:1200px) {
+      @media (max-width: 1200px) {
         max-height: 40px;
         font-size: 18px;
         padding: 0.5em 1em;
       }
-      @media (max-width:480px) {
+      @media (max-width: 480px) {
         position: absolute;
         top: 20px;
         left: 190px;
       }
-      @media (max-width:400px) {
+      @media (max-width: 400px) {
         left: 150px;
       }
-      @media (max-width:350px) {
+      @media (max-width: 350px) {
         top: 63px;
         left: 20px;
       }
-
-     
     }
     &__order-btn {
       display: inline-block;
       margin-left: auto;
-      background: #1890FF;
+      background: #1890ff;
       background-image: none !important;
       padding: 8px 16px !important;
       margin-right: 30px !important;
 
-      @media (max-width:480px) {
+      @media (max-width: 480px) {
         margin-left: 0px;
       }
     }

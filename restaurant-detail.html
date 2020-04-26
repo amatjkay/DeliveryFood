@@ -9,6 +9,7 @@
       rel="stylesheet"
       />
     <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -16,7 +17,7 @@
     <header class="header">
       <div class="container">
         <div class="header-inner">
-          <div class="logo">
+          <div class="logo wow bounce">
             <a href="#" id="header-logo"><img src="img/logo.svg"
                 alt="Logo" /></a>
           </div>
@@ -30,7 +31,7 @@
               type="button">
               <span class="btn__text">Войти</span>
             </button>
-            <button class="btn header-inner__button" type="button">
+            <button class="btn header-inner__button" id="cart-button" type="button">
               <img
                 class="header__button-img"
                 src="img/icons/cart.svg"
@@ -199,7 +200,7 @@
                 <footer class="footer">
                   <div class="container">
                     <div class="footer-inner">
-                      <div class="logo">
+                      <div class="logo wow bounce">
                         <a href="#header-logo" id="#footer-logo"><img
                             src="img/logo.svg" alt="Logo"
                             /></a>
@@ -240,11 +241,11 @@
                 </footer>
 
                 <div class="modal">
-                  <div class="modal-dialog">
+                  <div class="modal-dialog ">
                     <div class="modal-dialog__heading
                       restaurants-inner__heading">Корзина</div>
                     <button type="button"
-                      class="modal-dialog__close-btn"></button>
+                      class="modal-dialog__close-btn modal-dialog__close-btn--active" id="close"></button>
                     <div class="modal-dialog__inner">
                       <ul class="modal-dialog__list">
                         <li class="modal-dialog__list-item">
@@ -273,7 +274,7 @@
                               class="btn modal-dialog__remove-btn">-</button>
                             <span class="modal-dialog__counter">1</span>
                             <button type="button"
-                              class="btn modal-dialog__append-btn">+</button>
+                              class="btn modal-dialog__append-btn"></button>
                           </div>
                           <!-- /.modal-dialog__counter-wrapper -->
                         </li>
@@ -332,5 +333,7 @@
                   </div>
                   <!-- /.modal-dialog -->
                 </div>
+                <script src="js/wow.min.js"></script>
+                <script src="js/main.js"></script>
               </body>
             </html>
