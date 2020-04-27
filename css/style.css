@@ -111,7 +111,7 @@ li {
   .modal-dialog {
     padding: 30px 35px;
     width: 680px;
-    height: 450px;
+    min-height: 405px;
   }
 }
 
@@ -124,7 +124,10 @@ li {
 
 @media (max-width: 480px) {
   .modal-dialog {
-    height: auto;
+    display: flex;
+    align-items: stretch;
+    flex-flow: column nowrap;
+    flex: 1 1 auto;
   }
 }
 
@@ -139,6 +142,12 @@ li {
 @media (max-width: 1200px) {
   .modal-dialog__inner {
     padding: 10px 0 25px;
+  }
+}
+
+@media (max-height: 400px) {
+  .modal-dialog__inner {
+    padding: 0;
   }
 }
 
@@ -225,6 +234,12 @@ li {
 @media (max-width: 720px) {
   .modal-dialog__list-item {
     flex-wrap: wrap;
+  }
+}
+
+@media (max-height: 400px) {
+  .modal-dialog__list-item:first-child {
+    padding-top: 0;
   }
 }
 

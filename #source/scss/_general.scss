@@ -65,7 +65,6 @@ li {
   &-dialog {
     padding: 40px 45px;
     max-width: 780px;
-    // min-height: 550px;
     width: 98%;
     position: absolute;
     left: 50%;
@@ -77,15 +76,19 @@ li {
     @media (max-width: 1200px) {
       padding: 30px 35px;
       width: 680px;
-      height: 450px;
+      min-height: 405px;
     }
     @media (max-width: 720px) {
       padding: 20px;
       width: 90%;
     }
     @media (max-width: 480px) {
-      height: auto;
+      display: flex;
+      align-items: stretch;
+      flex-flow: column nowrap;
+      flex: 1 1 auto;
     }
+       
 
     &__inner {
       display: flex;
@@ -96,6 +99,9 @@ li {
 
       @media (max-width: 1200px) {
         padding: 10px 0 25px;
+      }
+      @media (max-height: 400px) {
+        padding: 0;
       }
     }
 
@@ -172,6 +178,13 @@ li {
         @media (max-width: 720px) {
           flex-wrap: wrap;
         }
+
+        &:first-child {
+          @media (max-height: 400px) {
+            padding-top: 0;
+          }
+        }
+        
 
         &::after {
           content: "";
