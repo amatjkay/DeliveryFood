@@ -9,4 +9,3 @@ function toggleModal() {
    modal.classList.toggle("modal--active");
 }
 
-new WOW().init();

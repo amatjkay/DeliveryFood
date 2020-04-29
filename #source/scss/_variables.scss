@@ -1,3 +1,6 @@
+//Переменные
+
+
 $minwidth: 320px;
 $mw: 1200px;
 $md1: $mw + 12px;
@@ -6,6 +9,8 @@ $md3: 767.98px;
 $md4: 479.98px;
 
 
+
+//Сетка
 .container {
 	max-width: $mw;
 	margin: 0 auto;
