@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Delivery food - доставка еды на дом</title>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;700&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header-inner">
+				<div class="logo">
+					<a href="restaurant-detail.html"
+						target="_blank" id="header-logo"><img src="img/logo.svg" alt="Logo" /></a>
+				</div>
+				<input class="input header-inner__input" type="text" placeholder="Адрес доставки" />
+				<div class="header-inner__buttons">
+					<button class="btn header-inner__button-primary" type="button">
+						<span class="btn__text">Войти</span>
+					</button>
+					<button class="btn header-inner__button" id="cart-button" type="button">
+						<img class="header__button-img" src="img/icons/cart.svg" alt="Cart" />
+						<span class="btn__text">Корзина</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="container">
+			<section class="promo">
+				<div class="promo-inner">
+					<h1 class="promo-inner__title title">
+						Онлайн-сервис доставки еды на дом
+					</h1>
+					<p class="promo-inner__text">
+						Блюда из любимого ресторана привезет
+						курьер в перчатках, маске и с антисептиком
+					</p>
+				</div>
+			</section>
+
+			<section class="restaurants">
+				<div class="restaurants-inner">
+					<div class="restaurants-inner__heading">Рестораны</div>
+					<input class="input restaurants-inner__input" type="text" placeholder="Поиск блюд и ресторанов" />
+				</div>
+				<div class="restaurants-inner__items">
+					<a class="restaurants-inner__item wow fadeInUp" data-wow-delay=0.1s href="restaurant-detail.html"
+						target="_blank">
+						<img class="restaurants-inner__item-img" src="img/restaurants-food/pizza-plus.jpg" alt="Pizza plus" />
+						<div class="restaurants-inner__item-descr">
+							<div class="restaurants-inner__item-descr-title">Пицца плюс</div>
+							<div class="restaurants-inner__item-descr-label">50 мин</div>
+							<div class="restaurants-inner__item-descr-rating rating rating">
+								<img class="rating-star" src="img/icons/star.svg" alt="">
+								<span class="rating-value">4.5</span>
+							</div>
+							<div class="restaurants-inner__item-descr-txt">
+								<span class="restaurants-inner__item-descr-price price">От 900 ₽</span>
+								<span class="restaurants-inner__item-descr-category category">Пицца</span>
+							</div>
+						</div>
+					</a>
+					<a href="restaurant-detail.html"
+						target="_blank" class="restaurants-inner__item wow fadeInUp" data-wow-delay=0.1s>
+						<img class="restaurants-inner__item-img" src="img/restaurants-food/tanuki.jpg" alt="Pizza plus" />
+						<div class="restaurants-inner__item-descr">
+							<div class="restaurants-inner__item-descr-title">Тануки</div>
+							<div class="restaurants-inner__item-descr-label">120 мин</div>
+							<div class="restaurants-inner__item-descr-rating rating">
+								<img class="rating-star" src="img/icons/star.svg" alt="">
+								<span class="rating-value">4.5</span>
+							</div>
+							<div class="restaurants-inner__item-descr-txt">
+								<span class="restaurants-inner__item-descr-price price">От 1300 ₽</span>
+								<span class="restaurants-inner__item-descr-category category">Суши, роллы, саке</span>
+							</div>
+						</div>
+					</a>
+					<a href="restaurant-detail.html"
+						target="_blank" class="restaurants-inner__item wow fadeInUp" data-wow-delay=0.1s>
+						<img class="restaurants-inner__item-img" src="img/restaurants-food/FoodBand.jpg" alt="Pizza plus" />
+						<div class="restaurants-inner__item-descr">
+							<div class="restaurants-inner__item-descr-title">FoodBand</div>
+							<div class="restaurants-inner__item-descr-label">50 мин</div>
+							<div class="restaurants-inner__item-descr-rating rating">
+								<img class="rating-star" src="img/icons/star.svg" alt="">
+								<span class="rating-value">4.5</span>
+							</div>
+							<div class="restaurants-inner__item-descr-txt">
+								<span class="restaurants-inner__item-descr-price price">От 900 ₽</span>
+								<span class="restaurants-inner__item-descr-category category">Пицца</span>
+							</div>
+						</div>
+					</a>
+					<a href="restaurant-detail.html"
+						target="_blank" class="restaurants-inner__item wow fadeInUp" data-wow-delay=0.4s>
+						<img class="restaurants-inner__item-img" src="img/restaurants-food/grow-pizza.jpg" alt="Pizza plus" />
+						<div class="restaurants-inner__item-descr">
+							<div class="restaurants-inner__item-descr-title">Жадина-пицца</div>
+							<div class="restaurants-inner__item-descr-label">50 мин</div>
+							<div class="restaurants-inner__item-descr-rating rating">
+								<img class="rating-star" src="img/icons/star.svg" alt="">
+								<span class="rating-value">4.5</span>
+							</div>
+							<div class="restaurants-inner__item-descr-txt">
+								<span class="restaurants-inner__item-descr-price price">От 900 ₽</span>
+								<span class="restaurants-inner__item-descr-category category">Пицца</span>
+							</div>
+						</div>
+					</a>
+					<a href="restaurant-detail.html"
+						target="_blank" class="restaurants-inner__item wow fadeInUp" data-wow-delay=0.6s>
+						<img class="restaurants-inner__item-img" src="img/restaurants-food/eat-point.jpg" alt="Pizza plus" />
+						<div class="restaurants-inner__item-descr">
+							<div class="restaurants-inner__item-descr-title">Точка еды</div>
+							<div class="restaurants-inner__item-descr-label">50 мин</div>
+							<div class="restaurants-inner__item-descr-rating rating">
+								<img class="rating-star" src="img/icons/star.svg" alt="">
+								<span class="rating-value">4.5</span>
+							</div>
+							<div class="restaurants-inner__item-descr-txt">
+								<span class="restaurants-inner__item-descr-price price">От 900 ₽</span>
+								<span class="restaurants-inner__item-descr-category category">Пицца</span>
+							</div>
+						</div>
+					</a>
+					<a href="restaurant-detail.html"
+						target="_blank" class="restaurants-inner__item wow fadeInUp" data-wow-delay=0.8s>
+						<img class="restaurants-inner__item-img" src="img/restaurants-food/PizzaBurger.png"
+							alt="Pizza plus" />
+						<div class="restaurants-inner__item-descr">
+							<div class="restaurants-inner__item-descr-title">PizzaBurger</div>
+							<div class="restaurants-inner__item-descr-label">50 мин</div>
+							<div class="restaurants-inner__item-descr-rating rating">
+								<img class="rating-star" src="img/icons/star.svg" alt="">
+								<span class="rating-value">4.5</span>
+							</div>
+							<div class="restaurants-inner__item-descr-txt">
+								<span class="restaurants-inner__item-descr-price price">От 900 ₽</span>
+								<span class="restaurants-inner__item-descr-category category">Пицца</span>
+							</div>
+						</div>
+					</a>
+
+				</div>
+		</div>
+		</section>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-inner">
+				<div class="logo">
+					<a href="#header-logo" id="#footer-logo"><img src="img/logo.svg" alt="Logo" /></a>
+				</div>
+				<div class="footer-inner__nav">
+					<a href="restaurant-detail.html"
+						target="_blank" class="footer-inner__nav-link">Ресторанам</a>
+					<a href="restaurant-detail.html"
+						target="_blank" class="footer-inner__nav-link">Курьерам</a>
+					<a href="restaurant-detail.html"
+						target="_blank" class="footer-inner__nav-link">Пресс-центр</a>
+					<a href="restaurant-detail.html"
+						target="_blank" class="footer-inner__nav-link">Контакты</a>
+				</div>
+				<div class="footer-inner-social">
+					<div class="footer-inner-social__item">
+						<a href="restaurant-detail.html"
+						target="_blank">
+							<img class="footer-inner-social__item-instagramm" src="img/social/inst.svg" alt="instagramm">
+						</a>
+						<a href="restaurant-detail.html"
+						target="_blank">
+							<img class="footer-inner-social__item-facebook" src="img/social/facebook.svg" alt="facebook">
+						</a>
+						<a href="restaurant-detail.html"
+						target="_blank">
+							<img class="footer-inner-social__item-vk" src="img/social/vk.svg" alt="vk">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+	<div class="modal">
+		<div class="modal-dialog ">
+			<div class="modal-dialog__heading
+		 restaurants-inner__heading">Корзина</div>
+			<button type="button" class="modal-dialog__close-btn modal-dialog__close-btn--active" id="close"></button>
+			<div class="modal-dialog__inner">
+				<ul class="modal-dialog__list">
+					<li class="modal-dialog__list-item">
+						<span class="modal-dialog__food-name">
+							Ролл угорь стандарт
+						</span>
+						<span class="modal-dialog__price">250 ₽</span>
+						<div class="modal-dialog__counter-wrapper">
+							<button class="btn modal-dialog__remove-btn">-</button>
+							<span class="modal-dialog__counter">1</span>
+							<button class="btn modal-dialog__append-btn">+</button>
+						</div>
+						<!-- /.modal-dialog__counter-wrapper -->
+					</li>
+					<li class="modal-dialog__list-item">
+						<span class="modal-dialog__food-name">
+							Ролл угорь стандарт
+						</span>
+						<span class="modal-dialog__price">250 ₽</span>
+						<div class="modal-dialog__counter-wrapper">
+							<button type="button" class="btn modal-dialog__remove-btn">-</button>
+							<span class="modal-dialog__counter">1</span>
+							<button type="button" class="btn modal-dialog__append-btn"></button>
+						</div>
+						<!-- /.modal-dialog__counter-wrapper -->
+					</li>
+					<li class="modal-dialog__list-item">
+						<span class="modal-dialog__food-name">
+							Ролл угорь стандарт
+						</span>
+						<span class="modal-dialog__price">250 ₽</span>
+						<div class="modal-dialog__counter-wrapper">
+							<button type="button" class="btn modal-dialog__remove-btn">-</button>
+							<span class="modal-dialog__counter">1</span>
+							<button type="button" class="btn modal-dialog__append-btn">+</button>
+						</div>
+						<!-- /.modal-dialog__counter-wrapper -->
+					</li>
+					<li class="modal-dialog__list-item">
+						<span class="modal-dialog__food-name">
+							Ролл угорь стандарт
+						</span>
+						<span class="modal-dialog__price">250 ₽</span>
+						<div class="modal-dialog__counter-wrapper">
+							<button type="button" class="btn modal-dialog__remove-btn">-</button>
+							<span class="modal-dialog__counter">1</span>
+							<button type="button" class="btn modal-dialog__append-btn">+</button>
+						</div>
+						<!-- /.modal-dialog__counter-wrapper -->
+					</li>
+					<li class="modal-dialog__list-item">
+						<span class="modal-dialog__food-name">
+							Ролл угорь стандарт
+						</span>
+						<span class="modal-dialog__price">250 ₽</span>
+						<div class="modal-dialog__counter-wrapper">
+							<button type="button" class="btn btn modal-dialog__remove-btn">-</button>
+							<span class="modal-dialog__counter">1</span>
+							<button type="button" class="btn btn modal-dialog__append-btn">+</button>
+						</div>
+						<!-- /.modal-dialog__counter-wrapper -->
+					</li>
+				</ul>
+			</div>
+			<div class="modal-dialog__footer">
+				<div class="modal-dialog__total-counter">1250 ₽</div>
+				<button class="btn modal-dialog__order-btn header-inner__button-primary">Оформить заказ</button>
+				<button class="btn modal-dialog__cancel-btn">Отмена</button>
+			</div>
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<script src="js/wow.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
