@@ -1,0 +1,14 @@
+.restaurant-inner {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	text-align: left;
+	&__heading {
+		display: inline-block;
+		margin: 0px 30px 0px 0px;
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 42px;
+		color: #000000;
+	}
+}

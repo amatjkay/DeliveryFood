@@ -1,0 +1,772 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background: #ffffff;
+}
+main {
+  background: linear-gradient(180deg, rgba(245, 245, 245, 0) 1.04%, #f5f5f5 100%);
+}
+a {
+  text-decoration: none;
+}
+button {
+  outline: none;
+  cursor: pointer;
+}
+.btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.0015);
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Playfair Display", sans-serif;
+  height: 40px;
+  outline: none;
+  transition: all 0.5s;
+  &:hover {
+    background: transparent;
+    color: #6b6969;
+    border: 1px solid #6b6969;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  
+  &--active {
+    display: flex;
+  }
+
+  &-dialog {
+    padding: 40px 45px;
+    max-width: 780px;
+    width: 98%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: 5px;
+
+    @media (max-width: 1200px) {
+      padding: 30px 35px;
+      width: 680px;
+      min-height: 405px;
+    }
+    @media (max-width: 720px) {
+      padding: 20px;
+      width: 90%;
+    }
+    @media (max-width: 480px) {
+      display: flex;
+      align-items: stretch;
+      flex-flow: column nowrap;
+      flex: 1 1 auto;
+    }
+       
+
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 275px;
+      padding: 45px 0 60px;
+
+      @media (max-width: 1200px) {
+        padding: 10px 0 25px;
+      }
+      @media (max-height: 400px) {
+        padding: 0;
+      }
+    }
+
+    &__heading {
+      display: inline-block;
+
+      @media (max-width: 1200px) {
+        font-size: 30px !important;
+      }
+      @media (max-width: 767) {
+        font-size: 20px;
+      }
+    }
+
+    &__close-btn {
+      width: 26px;
+      height: 26px;
+      padding: 5px;
+      position: absolute;
+      top: 49px;
+      right: 46px;
+      background: transparent;
+      border: none;
+
+      @media (max-width: 1200px) {
+        top: 35px;
+        right: 35px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        width: 26px;
+        height: 2px;
+        background: #000;
+        transform: rotate(45deg);
+        right: 0;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        width: 26px;
+        height: 2px;
+        background: #000;
+        transform: rotate(-45deg);
+        left: 0;
+      }
+      &:hover {
+        &::after {
+          content: "";
+          background: #40a9ff;
+        }
+        &::before {
+          content: "";
+          background: #40a9ff;
+        }
+      }
+    }
+
+    &__list {
+      padding: 0;
+      width: 100%;
+
+      &-item {
+        min-height: 40px;
+        padding-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        @media (max-width: 720px) {
+          flex-wrap: wrap;
+        }
+
+        &:first-child {
+          @media (max-height: 400px) {
+            padding-top: 0;
+          }
+        }
+        
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -9px;
+          height: 2px;
+          background-color: #d9d9d9;
+          width: 100%;
+        }
+      }
+    }
+    &__counter-wrapper {
+      width: 115px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__counter {
+      color: #000000;
+      font-family: "Playfair Display", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    &__remove-btn {
+      padding: 5px !important;
+      width: 40px !important;
+      height: 33px !important;
+      border-radius: 2px;
+      border: 1px solid #40a9ff;
+      background-color: #ffffff;
+      // Style for "-"
+      color: #40a9ff;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    &__append-btn {
+      padding: 5px !important;
+      width: 40px !important;
+      height: 33px !important;
+      border-radius: 2px;
+      border: 1px solid #40a9ff;
+      background-color: #ffffff;
+      // Style for "+"
+      color: #40a9ff;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    &__price {
+      font-weight: 700;
+      font-size: 20px;
+      color: #000000;
+      display: inline-block;
+      margin-left: auto;
+      margin-right: 47px;
+
+      @media (max-width: 720px) {
+        margin-right: 25px;
+      }
+      @media (max-width: 480px) {
+        margin-left: 0px;
+      }
+    }
+
+    &__food-name {
+      margin-right: 20px;
+      font-size: 18px;
+      line-height: 32px;
+      color: #000000;
+    }
+
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @media (max-width: 1200px) {
+        max-height: 40px;
+      }
+    }
+
+    &__total-counter {
+      display: inline-flex;
+      background: #262626;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 23px;
+      color: #fafafa;
+      padding: 15px 20px;
+      cursor: default;
+
+      @media (max-width: 1200px) {
+        max-height: 40px;
+        font-size: 18px;
+        padding: 0.5em 1em;
+      }
+      @media (max-width: 480px) {
+        position: absolute;
+        top: 20px;
+        left: 190px;
+      }
+      @media (max-width: 400px) {
+        left: 150px;
+      }
+      @media (max-width: 350px) {
+        top: 63px;
+        left: 20px;
+      }
+    }
+    &__order-btn {
+      display: inline-block;
+      margin-left: auto;
+      background: #1890ff;
+      background-image: none !important;
+      padding: 8px 16px !important;
+      margin-right: 30px !important;
+
+      @media (max-width: 480px) {
+        margin-left: 0px;
+      }
+    }
+    // &__cancel-btn {
+
+    // }
+  }
+}
+
+.input {
+  min-width: 270px;
+  font-family: "Playfair Display", sans-serif;
+  outline: none;
+  padding: 0.5em 1em;
+  border: 1px solid #bfbfbf;
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 24px;
+  transition: all 0.3s;
+  &:hover {
+    border: 1px solid #6b6969;
+  }
+}
+
+.price {
+  min-width: 108px;
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin: 5px 10px;
+    background: #8c8c8c;
+    border-radius: 50%;
+  }
+}
+.category {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 150px;
+  @media (max-width: 720px) {
+    max-width: 450px;
+  }
+}
+.rating {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 32px;
+  color: #ffc107;
+  margin: 0px 26px 0px 0px;
+}
+
+// header
+.header {
+  padding: 45px 10px 20px;
+  @media (max-width: 620px) {
+    padding: 20px 10px 20px;
+  }
+
+  &-inner {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 620px) {
+      flex-wrap: wrap;
+      order: 2;
+    }
+    @media (max-width: 350px) {
+      display: flex;
+    }
+    & .logo {
+      @media (max-width: 620px) {
+        margin: 20px;
+        order: 1;
+      }
+    }
+
+    &__input {
+      padding-left: 32px;
+      flex: 0.9;
+      height: 40px;
+      background: url(../img/icons/home.svg) no-repeat left 10px center;
+      margin: 0 30px;
+      @media (max-width: 620px) {
+        flex: 1;
+        order: 4;
+        margin: auto;
+      }
+    }
+    &__buttons {
+      display: flex;
+      @media (max-width: 768px) {
+        .btn__text {
+          display: none;
+        }
+      }
+      @media (max-width: 620px) {
+        order: 3;
+      }
+      @media (max-width: 350px) {
+        position: absolute;
+        top: 40px;
+        right: 10%;
+      }
+    }
+    &__button-primary {
+      margin-right: 10px;
+      padding-left: 35px;
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.0015);
+      background: #1890ff url(../img/icons/user.svg) no-repeat left 16px top 11.5px;
+      color: #fff;
+      &:hover {
+        background: #fff url(../img/icons/user-b.svg) no-repeat left 16px top 11.5px;
+      }
+    }
+    &__button {
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.0015);
+      background: #fff;
+      color: #595959;
+      img {
+        transform: translateY(1px);
+      }
+    }
+  }
+}
+//header
+
+//Promo
+.promo {
+  padding: 20px 0px;
+
+  &-inner {
+    padding: 68px 70px;
+    box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
+    background: #fff1b8 url(../img/promo-image.png) no-repeat top right -400px / cover;
+    border-radius: 10px;
+
+    @media (max-width: 620px) {
+      margin-top: 60px;
+      padding: 40px 40px;
+      background: #fff1b8 url(../img/promo-image.png) no-repeat top right -300px / cover;
+    }
+    @media (max-width: 499px) {
+      margin-top: 60px;
+      padding: 40px 40px;
+      background-image: none;
+    }
+
+    &__title {
+      max-width: 410px;
+      font-weight: 700;
+      font-size: 39px;
+      line-height: 46px;
+      color: #302c34;
+
+      @media (max-width: 620px) {
+        max-width: 320px;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 45px;
+      }
+      @media (max-width: 325px) {
+        font-size: 18px;
+      }
+    }
+
+    &__text {
+      max-width: 510px;
+      font-size: 24px;
+      line-height: 28px;
+      color: #302c34;
+
+      @media (max-width: 620px) {
+        max-width: 300px;
+        font-size: 20px;
+        line-height: 25px;
+      }
+      @media (max-width: 325px) {
+        display: none;
+      }
+    }
+  }
+}
+//Restaurants
+.restaurants {
+  padding: 35px 0 90px;
+  @media (max-width: $md1) {
+    .restaurants-inner__item {
+      flex-basis: 32%;
+    }
+  }
+  @media (max-width: $md2) {
+    .restaurants-inner__item {
+      flex-basis: 48%;
+    }
+  }
+
+  @media (max-width: 720px) {
+    padding: 30px 0;
+
+    .restaurants-inner {
+      flex-wrap: wrap;
+      align-items: center;
+      &__item {
+        flex-basis: 100%;
+      }
+
+      &__heading {
+        margin: 20px;
+
+        @media (max-width: 620px) {
+          margin: 0 20px 20px 0px;
+        }
+      }
+
+      &__input {
+        flex: 1;
+      }
+    }
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    margin: 0px 0px 45px 0px;
+
+    &__heading {
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 42px;
+      color: #000000;
+    }
+
+    &__input {
+      background: url(../img/icons/search.svg) no-repeat left 10px center;
+      padding-left: 32px;
+      min-width: 306px;
+      margin-left: auto;
+
+      @media (max-width: 620px) {
+        min-width: 270px;
+      }
+    }
+
+    &__items {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__item {
+      background: #fff;
+      margin: 0px 0px 30px 0px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+      border-radius: 7px;
+      overflow: hidden;
+      transition: all 0.3s;
+
+      &:hover {
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.7);
+      }
+
+      &-img {
+        object-fit: cover;
+        width: 100%;
+      }
+
+      &-descr {
+        position: relative;
+        padding: 20px 24px 34px;
+        min-height: 40px;
+
+        &-title {
+          margin-bottom: 10px;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 32px;
+          color: #000000;
+        }
+        &-label {
+          position: absolute;
+          top: 24px;
+          right: 24px;
+          display: inline-flex;
+          padding: 1px 8px;
+          background: #262626;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          line-height: 20px;
+        }
+        &-txt {
+          display: inline-flex;
+          align-items: center;
+          font-size: 18px;
+          line-height: 32px;
+          color: #8c8c8c;
+        }
+      }
+    }
+  }
+}
+.restaurant {
+  padding-bottom: 110px;
+  @media (max-width: 350px) {
+    padding-bottom: 50px;
+  }
+  @media (max-width: $md1) {
+    .restaurants-inner__item {
+      flex-basis: 32%;
+    }
+  }
+  @media (max-width: $md2) {
+    .restaurants-inner__item {
+      flex-basis: 48%;
+    }
+  }
+  @media (max-width: 720px) {
+    .restaurants-inner__item {
+      flex-basis: 100%;
+    }
+  }
+
+  &-inner {
+    position: relative;
+    @media (max-width: 620px) {
+      margin-top: 100px;
+    }
+    @media (max-width: 450px) {
+      min-height: max-content;
+      flex-wrap: wrap;
+    }
+    &__heading {
+      @media (max-width: 450px) {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  &-item {
+    &__btn {
+      margin: 0 32px 30px 20px;
+      padding: 8px 32px 8px 16px;
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.0015);
+      background: #1890ff url(../img/icons/cart-w.svg) no-repeat right 15px top 16px;
+      color: #fff;
+      &:hover {
+        background: #fff url(../img/icons/cart.svg) no-repeat right 15px top 16px;
+      }
+    }
+    &__price {
+      display: inline-flex;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 32px;
+      color: #000000;
+    }
+  }
+  &-inner {
+    padding-bottom: 45px;
+    &__textbox {
+      padding: 24px 0 24px 24px;
+      max-width: 337px;
+      text-align: left;
+    }
+    &__food-name {
+      padding-bottom: 10px;
+      font-size: 24px;
+      color: #000000;
+    }
+    &__food-descr {
+      overflow: hidden;
+      min-height: 85px;
+      max-height: 100px;
+      font-size: 18px;
+      line-height: 21px;
+      color: #8c8c8c;
+    }
+  }
+}
+
+//footer
+
+.footer {
+  padding: 60px 0;
+
+  & .logo {
+    margin: 0px 35px 0px 0px;
+
+    @media (max-width: 620px) {
+      position: relative;
+      top: -45px;
+      left: 0;
+    }
+    @media (max-width: 499px) {
+      position: relative;
+      top: -10px;
+    }
+  }
+
+  &-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 499px) {
+      flex-flow: column;
+    }
+
+    &__nav {
+      display: inline-block;
+      margin-right: auto;
+
+      @media (max-width: 767px) {
+        flex-direction: column;
+        display: flex;
+        margin: 10px;
+        justify-content: inherit;
+        align-items: flex-start;
+        height: 130px;
+        margin: 20px auto;
+      }
+
+      &-link {
+        font-size: 18px;
+        line-height: 21px;
+        color: #595959;
+        text-decoration: none;
+        transition: all 0.3s;
+
+        &:hover {
+          display: inline-block;
+          color: #232020;
+          transform: scale(1.1);
+        }
+      }
+      &-link:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+    &-social {
+      @media (max-width: 620px) {
+        position: absolute;
+        bottom: 72px;
+        left: 0;
+        bottom: 20px;
+      }
+      @media (max-width: 499px) {
+        position: relative;
+        bottom: -20px;
+      }
+
+      &__item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 130px;
+      }
+    }
+  }
+}
