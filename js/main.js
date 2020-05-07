@@ -2,16 +2,6 @@ const cartButton = document.querySelector("#cart-button");
 const modal = document.querySelector(".modal");
 const close = document.querySelector(".close");
 const loginForm = document.querySelector("#logInForm");
-
-cartButton.addEventListener("click", toggleModal);
-close.addEventListener("click", toggleModal);
-
-function toggleModal() {
-  modal.classList.toggle("is-open");
-}
-
-// ---
-
 const buttonAuth = document.querySelector(".button-auth");
 const modalAuth = document.querySelector(".modal-auth");
 const modalMessage = document.querySelector(".modal-dialog-message");
@@ -28,10 +18,24 @@ const cardsMenu = document.querySelector(".cards-menu");
 
 let login = localStorage.getItem("userLogin");
 
-function toggleModalAuth() {
+const getData = async function (url) {
+  const response = await fetch(url);
+  console.log(response.json());
+};
+
+getData("./db/partners.json");
+
+const toggleModal = function () {
+  modal.classList.toggle("is-open");
+};
+
+const toggleModalAuth = function () {
   loginInput.style.borderColor = "";
   modalAuth.classList.toggle("is-open");
-}
+};
+
+cartButton.addEventListener("click", toggleModal);
+close.addEventListener("click", toggleModal);
 
 function authorized() {
   function logOut() {
