@@ -343,8 +343,13 @@ function init() {
   checkAuth();
 
   new Swiper(".swiper-container", {
-    Loop: true,
+    loop: true,
     sliderPerView: 1,
+    speed: 2000,
+    spaceBetween: 100,
+    autoplay: {
+      delay: 3000,
+    },
   });
 }
 
