@@ -320,7 +320,7 @@ function init() {
           return item.products;
         });
 
-        products.foreach(function (product) {
+        products.forEach(function (product) {
           getData(`./db/${product}`).then(function (data) {
             goods.push(...[data]);
 
