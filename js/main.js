@@ -22,6 +22,9 @@ const rating = document.querySelector(".rating");
 const minPrice = document.querySelector(".price");
 const category = document.querySelector(".category");
 const inputSearch = document.querySelector(".input-search");
+const modalBody = document.querySelector(".modal-body");
+const modalPrice = document.querySelector(".modal-pricetag");
+const buttonClearCart = document.querySelector(".clear-cart");
 const cart = [];
 
 //Переменные
@@ -29,106 +32,104 @@ let login = localStorage.getItem("userLogin");
 
 //Функции
 const getData = async function (url) {
-	const response = await window.fetch(url);
+  const response = await window.fetch(url);
 
-	if (!response.ok) {
-		throw new Error(`Ошибка по адресу ${url},
+  if (!response.ok) {
+    throw new Error(`Ошибка по адресу ${url},
     статус ошибка ${response}!`);
-	}
-	return await response.json();
+  }
+  return await response.json();
 };
 
 const toggleModal = function () {
-	modal.classList.toggle("is-open");
+  modal.classList.toggle("is-open");
 };
 
 const toggleModalAuth = function () {
-	loginInput.style.borderColor = '';
-	modalAuth.classList.toggle("is-open");
+  loginInput.style.borderColor = "";
+  modalAuth.classList.toggle("is-open");
 };
 
 const returnMain = function () {
-	containerPromo.classList.remove("hide");
-	restaurants.classList.remove("hide");
-	menu.classList.add("hide");
+  containerPromo.classList.remove("hide");
+  restaurants.classList.remove("hide");
+  menu.classList.add("hide");
 };
 
 function authorized() {
-	function logOut() {
-		login = null;
-		localStorage.removeItem("userLogin");
-		buttonAuth.style.display = "";
-		userName.style.display = "";
-		buttonOut.style.display = "";
-		cartButton.style.display = "";
-		buttonOut.removeEventListener("click", logOut);
-		checkAuth();
-		returnMain();
-	}
-	console.log("Авторизован");
-	userName.textContent = login;
-	buttonAuth.style.display = "none";
-	userName.style.display = "inline";
-	buttonOut.style.display = "flex";
-	cartButton.style.display = 'flex';
-	buttonOut.addEventListener("click", logOut);
+  function logOut() {
+    login = null;
+    localStorage.removeItem("userLogin");
+    buttonAuth.style.display = "";
+    userName.style.display = "";
+    buttonOut.style.display = "";
+    cartButton.style.display = "";
+    buttonOut.removeEventListener("click", logOut);
+    checkAuth();
+    returnMain();
+  }
+  console.log("Авторизован");
+  userName.textContent = login;
+  buttonAuth.style.display = "none";
+  userName.style.display = "inline";
+  buttonOut.style.display = "flex";
+  cartButton.style.display = "flex";
+  buttonOut.addEventListener("click", logOut);
 }
 
 function notAuthorized() {
-	console.log("Не авторизован");
+  console.log("Не авторизован");
 
-	function logIn(event) {
-		event.preventDefault();
-		login = loginInput.value;
+  function logIn(event) {
+    event.preventDefault();
+    login = loginInput.value;
 
-		if (loginInput.value.trim()) {
+    if (loginInput.value.trim()) {
+      localStorage.setItem("userLogin", login);
 
-			localStorage.setItem("userLogin", login);
+      toggleModalAuth();
+      buttonAuth.removeEventListener("click", toggleModalAuth);
+      closeAuth.removeEventListener("click", toggleModalAuth);
+      loginForm.removeEventListener("submit", logIn);
+      loginForm.reset();
+      checkAuth();
+    } else {
+      loginInput.style.borderColor = "tomato";
+    }
+  }
 
-			toggleModalAuth();
-			buttonAuth.removeEventListener("click", toggleModalAuth);
-			closeAuth.removeEventListener("click", toggleModalAuth);
-			loginForm.removeEventListener("submit", logIn);
-			loginForm.reset();
-			checkAuth();
-		} else {
-			loginInput.style.borderColor = 'tomato';
-		}
-
-	}
-
-	buttonAuth.addEventListener("click", toggleModalAuth);
-	closeAuth.addEventListener("click", toggleModalAuth);
-	loginForm.addEventListener("submit", logIn);
+  buttonAuth.addEventListener("click", toggleModalAuth);
+  closeAuth.addEventListener("click", toggleModalAuth);
+  loginForm.addEventListener("submit", logIn);
 }
 
 function checkAuth() {
-	if (login) {
-		authorized();
-	} else {
-		notAuthorized();
-	}
+  if (login) {
+    authorized();
+  } else {
+    notAuthorized();
+  }
 }
 
 function createCardRestaurant({
-	image,
-	kitchen,
-	name,
-	price,
-	products,
-	stars,
-	time_of_delivery: timeOfDelivery,
+  image,
+  kitchen,
+  name,
+  price,
+  products,
+  stars,
+  time_of_delivery: timeOfDelivery,
 }) {
-	const card = document.createElement("a");
-	card.classList.add("card");
-	card.classList.add("card-restaurant");
-	card.className = "card card-restaurant";
-	card.products = products;
-	card.info = [name, price, stars, kitchen];
+  const card = document.createElement("a");
+  card.classList.add("card");
+  card.classList.add("card-restaurant");
+  card.className = "card card-restaurant";
+  card.products = products;
+  card.info = [name, price, stars, kitchen];
 
-	card.insertAdjacentHTML(
-		"beforeend",
-		`
+  card.insertAdjacentHTML(
+    "beforeend",
+    `
 		<img
 				src="${image}"
 				alt="image"
@@ -148,44 +149,44 @@ function createCardRestaurant({
          </div>
       </div>
     `
-	);
+  );
 
-	cardsRestaurants.insertAdjacentElement("beforeend", card);
+  cardsRestaurants.insertAdjacentElement("beforeend", card);
 }
 
 function openGoods(event) {
-	const target = event.target;
+  const target = event.target;
 
-	const restaurant = target.closest(".card-restaurant");
+  const restaurant = target.closest(".card-restaurant");
 
-	if (restaurant) {
-		const [name, price, stars, kitchen] = restaurant.info;
+  if (restaurant) {
+    const [name, price, stars, kitchen] = restaurant.info;
 
-		cardsMenu.textContent = "";
-		containerPromo.classList.add("hide");
-		restaurants.classList.add("hide");
-		menu.classList.remove("hide");
+    cardsMenu.textContent = "";
+    containerPromo.classList.add("hide");
+    restaurants.classList.add("hide");
+    menu.classList.remove("hide");
 
-		restaurantTitle.textContent = name;
-		rating.textContent = stars;
-		minPrice.textContent = `От ${price} ₽`;
-		category.textContent = kitchen;
+    restaurantTitle.textContent = name;
+    rating.textContent = stars;
+    minPrice.textContent = `От ${price} ₽`;
+    category.textContent = kitchen;
 
-		getData(`./db/${restaurant.products}`).then(function (data) {
-			data.forEach(createCardGood);
-		});
-	} else {
-		toggleModalAuth();
-	}
+    getData(`./db/${restaurant.products}`).then(function (data) {
+      data.forEach(createCardGood);
+    });
+  } else {
+    toggleModalAuth();
+  }
 }
 
 function createCardGood({ description, id, image, name, price }) {
-	const card = document.createElement("div");
-	card.className = "card";
+  const card = document.createElement("div");
+  card.className = "card";
 
-	card.insertAdjacentHTML(
-		"beforeend",
-		`
+  card.insertAdjacentHTML(
+    "beforeend",
+    `
    <img
    src="${image}"
    alt="image"
@@ -209,94 +210,142 @@ function createCardGood({ description, id, image, name, price }) {
       </div>
    </div>
    `
-	);
+  );
 
-	cardsMenu.insertAdjacentElement("beforeend", card);
+  cardsMenu.insertAdjacentElement("beforeend", card);
 }
 
-
 function addToCart(event) {
-	const target = event.target;
-	const buttonAddToCart = target.closest('.button-add-cart');
-	if (buttonAddToCart) {
-		const card = target.closest('.card');
-		const title = card.querySelector('.card-title-reg').textContent;
-		const cost = card.querySelector('.card-price').textContent;
-		const id = buttonAddToCart.id;
+  const target = event.target;
+  const buttonAddToCart = target.closest(".button-add-cart");
+  if (buttonAddToCart) {
+    const card = target.closest(".card");
+    const title = card.querySelector(".card-title-reg").textContent;
+    const cost = card.querySelector(".card-price").textContent;
+    const id = buttonAddToCart.id;
 
-		const food = cart.find(function (item) {
-			return item.id === id;
-		})
-		if (food) {
-			food.count += 1;
-		} else {
-			cart.push({
-				id: id,
-				title: title,
-				cost: cost,
-				count: 1
-			});
-		}
+    const food = cart.find(function (item) {
+      return item.id === id;
+    });
+    if (food) {
+      food.count += 1;
+    } else {
+      cart.push({
+        id,
+        title,
+        cost,
+        count: 1,
+      });
+    }
 
+    console.log(cart);
+  }
+}
 
-		console.log(cart);
+function renderCart() {
+  modalBody.textContent = "";
 
+  cart.forEach(function ({ id, title, cost, count }) {
+    const itemCart = `	
+		<div class="food-row">
+		<span class="food-name">${title}</span>
+		<strong class="food-price">${cost}</strong>
+		<div class="food-counter">
+			<button class="counter-button counter-minus" data-id=${id}>-</button>
+			<span class="counter">${count}</span>
+			<button class="counter-button counter-plus" data-id=${id}>+</button>
+		</div>
+		</div>
+  	`;
+    modalBody.insertAdjacentHTML("afterbegin", itemCart);
+  });
 
-	}
+  const totalPrice = cart.reduce(function (result, item) {
+    return result + parseFloat(item.cost) * item.count;
+  }, 0);
+
+  modalPrice.textContent = totalPrice + " ₽";
+}
+
+function changeCount(event) {
+  const target = event.target;
+
+  if (target.classList.contains("counter-button")) {
+    const food = cart.find(function (item) {
+      return item.id === target.dataset.id;
+    });
+    if (target.classList.contains("counter-minus")) {
+      food.count--;
+      if (food.count === 0) {
+        cart.splice(cart.indexOf(food), 1);
+      }
+    }
+    if (target.classList.contains("counter-plus")) food.count++;
+    renderCart();
+  }
 }
 
 function init() {
-	getData("./db/partners.json").then(function (data) {
-		data.forEach(createCardRestaurant);
-	});
-	//Обработчики событий
-	cartButton.addEventListener("click", toggleModal);
+  getData("./db/partners.json").then(function (data) {
+    data.forEach(createCardRestaurant);
+  });
 
-	cardsMenu.addEventListener('click', addToCart)
+  cartButton.addEventListener("click", function () {
+    renderCart();
+    toggleModal();
+  });
 
-	close.addEventListener("click", toggleModal);
+  buttonClearCart.addEventListener("click", function () {
+    cart.length = 0;
+    toggleModal();
+  });
 
-	cardsRestaurants.addEventListener("click", openGoods);
+  modalBody.addEventListener("click", changeCount);
 
-	logo.addEventListener("click", returnMain);
+  cardsMenu.addEventListener("click", addToCart);
 
-	inputSearch.addEventListener("keydown", function (event) {
-		if (event.keyCode === 13) {
-			const target = event.target;
-			const goods = [];
+  close.addEventListener("click", toggleModal);
 
-			getData("./db/partners.json").then(function (data) {
-				const products = data.map(function (item) {
-					return item.products;
-				});
+  cardsRestaurants.addEventListener("click", openGoods);
 
-				products.foreach(function (product) {
-					getData(`./db/${product}`).then(function (data) {
-						goods.push(...[data]);
+  logo.addEventListener("click", returnMain);
 
-						cardsMenu.textContent = "";
+  inputSearch.addEventListener("keydown", function (event) {
+    if (event.keyCode === 13) {
+      const target = event.target;
+      const goods = [];
 
-						containerPromo.classList.add("hide");
-						restaurants.classList.add("hide");
-						menu.classList.remove("hide");
+      getData("./db/partners.json").then(function (data) {
+        const products = data.map(function (item) {
+          return item.products;
+        });
 
-						restaurantTitle.textContent = `Результат поиска`;
-						rating.textContent = ``;
-						minPrice.textContent = ``;
-						category.textContent = ``;
-					});
-				});
-			});
-		}
-	});
+        products.foreach(function (product) {
+          getData(`./db/${product}`).then(function (data) {
+            goods.push(...[data]);
 
-	checkAuth();
+            cardsMenu.textContent = "";
 
-	new Swiper(".swiper-container", {
-		Loop: true,
-		sliderPerView: 1,
-	});
+            containerPromo.classList.add("hide");
+            restaurants.classList.add("hide");
+            menu.classList.remove("hide");
+
+            restaurantTitle.textContent = `Результат поиска`;
+            rating.textContent = ``;
+            minPrice.textContent = ``;
+            category.textContent = ``;
+          });
+        });
+      });
+    }
+  });
+
+  checkAuth();
+
+  new Swiper(".swiper-container", {
+    Loop: true,
+    sliderPerView: 1,
+  });
 }
 
-//Вызовы функций
 init();
